@@ -1,26 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lan="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" hrref="css/main.css">
-        
-        <title>Web Football Sim :: Tokyo Starbucks Reserve Roastery</title>
-    </head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
 
-    <body>
+    <title>Web Football Sim :: Tokyo Starbucks Reserve Roastery</title>
+</head>
 
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
-        <!-- App JS -->
-        <script type="text/javascript" src="js/main.js"></script>
-    </body>
+<body class="container-fluid">
+    <nav class="navbar fixed-top navbar-dark bg-primary">
+        <!-- Navbar content -->
+        <a class="navbar-brand" href="#">WebFootballSim</a>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createLeague">New
+            League</button>
+    </nav>
+
+    <!-- League Table -->
+    <div class="league-table">
+        <div class="league-table-title">0 Leagues available</div>
+        <div class="league-row">
+            <div class="league-name">League Name</div>
+            <button type="button" class="btn btn-danger league-btn">Delete</button>
+            <button type="button" class="btn btn-primary league-btn">View</button>
+        </div>
+        <div class="league-row">
+            <div class="league-name">SuperLiga NOS</div>
+            <button type="button" class="btn btn-danger league-btn">Delete</button>
+            <button type="button" class="btn btn-primary league-btn">View</button>
+        </div>
+        <div class="league-row">
+            <div class="league-name">Premier League</div>
+            <button type="button" class="btn btn-danger league-btn">Delete</button>
+            <button type="button" class="btn btn-primary league-btn">View</button>
+        </div>
+    </div>
+
+    <!-- Create League Modal -->
+    <div class="modal fade" id="createLeague" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="createLeagueLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createLeagueLabel">Create a new league</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- League Name -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="leagueName">League Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Insert your league name"
+                            aria-label="Your league name" aria-describedby="leagueName">
+                    </div>
+
+                    <!-- League Number of Teams -->
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="18teams" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="18teams">18 teams</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="20teams" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="20teams">20 teams</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="22teams" name="customRadio" class="custom-control-input">
+                        <label class="custom-control-label" for="22teams">22 teams</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
 </html>
